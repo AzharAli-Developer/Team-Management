@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block first %}
+<h2 class="text-center mt-4">Player Detail</h2>
+<div class="row">
+    <div class="col-md-8 mx-auto mt-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Minutes Played</th>
+                    <th scope="col">Assist</th>
+                    <th scope="col">Rebound</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>{{p.name}}</th>
+                    <td>{{p.team}}</td>
+                    <td>{{p.height}}</td>
+                    <td>{{p.position}}</td>
+                    <td>{{match.minutes_played}}</td>
+                    <td>{{match.assist}}</td>
+                    <td>{{match.rebound}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock first %}

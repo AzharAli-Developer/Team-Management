@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block first %}
+<h2 class="text-center mt-4">Match Detail's</h2>
+<h3 class="text-center mt-2">Score</h3>
+<h4 class="text-center mt-2">{{match.team_A.score}}-{{match.team_B.score}}</h4>
+
+<div class=" mt-3 row ">
+    <div class="col-md-6 mx-auto text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">{{match.team_A}}</th>
+                    <th scope="col">{{match.team_B}}</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for player_a, player_b in paired_players %}
+                <tr>
+                    <td><a href="{% url 'player_details' player_a.id %}" style="text-decoration: none;">{{ player_a }}</a></td>
+                    <td><a href="{% url 'player_details' player_b.id %}" style="text-decoration: none;">{{ player_b }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock first %}
